@@ -1,0 +1,123 @@
+.nav-bar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+}
+.nav-bar h2 {
+  font-size: 26px;
+  font-weight: bolder;
+}
+.icon-text {
+  display: flex;
+  gap: 4px;
+}
+.all-countries {
+  display: grid;
+  width: 50vw;
+  margin: auto;
+  padding-bottom: 5rem;
+}
+.country-card {
+  max-width: 300px;
+  background-color: white;
+  border-radius: 0.5rem;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+
+.flag {
+  width: 100%;
+}
+.flag img {
+  width: 100%;
+  height: 200px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.country-info {
+  padding: 2rem;
+}
+.country-info h4 {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+  padding-bottom: 0.8rem;
+}
+.country-info p {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: lighter;
+  padding-bottom: 0.8rem;
+}
+.country-info b {
+  font-size: 16px;
+  font-weight: 550;
+}
+.select-search {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.searching {
+  margin-top: 3rem;
+  margin-left: 2rem;
+}
+.searchContainer {
+  position: relative;
+}
+.search-icon {
+  position: absolute;
+  top: 16px;
+  left: 10px;
+}
+
+.select-search {
+  padding: 1rem 2.3rem;
+  font-size: 16px;
+  outline: none;
+  border-style: none;
+  width: 220px;
+  border-radius: 0.25rem;
+  background-color: white;
+}
+input {
+  padding: 1rem 2.3rem;
+  font-size: 16px;
+  outline: none;
+  border-style: none;
+  width: 460px;
+  border-radius: 0.25rem;
+}
+@media only screen and (min-width: 800px) {
+  .all-countries {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    width: 80vw;
+  }
+  .searching {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding-top: 1rem;
+    gap: 3rem;
+  }
+}
+.links {
+  text-decoration: none;
+  color: black;
+}
+@media only screen and (min-width: 1200px) {
+  .all-countries {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .all-countries {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+  }
+}
