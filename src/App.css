@@ -121,3 +121,37 @@ input {
     gap: 3rem;
   }
 }
+
+/* for the single page */
+.single-page {
+  margin: 3rem auto;
+  width: 90vw;
+}
+.goBack {
+  padding: 0.8rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2rem;
+  background-color: white;
+  border: none;
+  border-radius: 0.25rem;
+}
+.singleCountry-info {
+  padding-top: 1rem;
+}
+.single-flag {
+  padding-left: 5rem;
+}
+.single-info {
+  padding-top: 1rem;
+}
+.single-info h2 {
+  padding-bottom: 1rem;
+}
+.important-info {
+  padding-bottom: 1rem;
+}
+.specific-info {
+  padding-bottom: 1rem;
+}
