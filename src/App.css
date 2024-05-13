@@ -1,3 +1,6 @@
+:root {
+  --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 16px 0 rgba(0, 0, 0, 0.19);
+}
 .nav-bar {
   background-color: white;
   display: flex;
@@ -26,6 +29,9 @@
   margin-top: 3rem;
   cursor: pointer;
 }
+.country-card:hover {
+  box-shadow: var(--box-shadow);
+}
 
 .flag {
   width: 100%;
@@ -50,10 +56,6 @@
   line-height: 18px;
   font-weight: lighter;
   padding-bottom: 0.8rem;
-}
-.country-info b {
-  font-size: 16px;
-  font-weight: 550;
 }
 .select-search {
   margin-top: 2rem;
@@ -80,6 +82,7 @@
   width: 220px;
   border-radius: 0.25rem;
   background-color: white;
+  box-shadow: var(--box-shadow);
 }
 input {
   padding: 1rem 2.3rem;
@@ -88,6 +91,69 @@ input {
   border-style: none;
   width: 460px;
   border-radius: 0.25rem;
+  /* box-shadow: var(--box-shadow); */
+}
+.links {
+  text-decoration: none;
+  color: black;
+}
+
+p b {
+  font-weight: 600;
+  line-height: 18px;
+}
+/* for the single page */
+.single-page {
+  margin: 3rem auto;
+  width: 90vw;
+}
+.goBack {
+  padding: 0.8rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2rem;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+
+  border: none;
+  border-radius: 0.25rem;
+}
+.singleCountry-info {
+  padding-top: 1rem;
+  display: grid;
+}
+.single-flag {
+  text-align: center;
+}
+.single-country-flag {
+  width: 400px;
+  height: 200px;
+}
+.single-info {
+  padding-top: 1.7rem;
+}
+.single-info h2 {
+  padding-bottom: 1rem;
+}
+.single-info p {
+  padding-bottom: 0.5rem;
+}
+.important-info {
+  padding-bottom: 1rem;
+}
+.specific-info {
+  padding-bottom: 1rem;
+}
+.border-countries button {
+  padding: 0.7rem 0.8rem;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border: none;
+  border-radius: 0.25rem;
+  margin-bottom: 0.8rem;
+  margin-left: 1rem;
+  cursor: pointer;
 }
 @media only screen and (min-width: 800px) {
   .all-countries {
@@ -104,10 +170,11 @@ input {
     padding-top: 1rem;
     gap: 3rem;
   }
-}
-.links {
-  text-decoration: none;
-  color: black;
+  .singleCountry-info {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+  }
 }
 @media only screen and (min-width: 1200px) {
   .all-countries {
@@ -120,38 +187,4 @@ input {
     grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
   }
-}
-
-/* for the single page */
-.single-page {
-  margin: 3rem auto;
-  width: 90vw;
-}
-.goBack {
-  padding: 0.8rem 2rem;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 2rem;
-  background-color: white;
-  border: none;
-  border-radius: 0.25rem;
-}
-.singleCountry-info {
-  padding-top: 1rem;
-}
-.single-flag {
-  padding-left: 5rem;
-}
-.single-info {
-  padding-top: 1rem;
-}
-.single-info h2 {
-  padding-bottom: 1rem;
-}
-.important-info {
-  padding-bottom: 1rem;
-}
-.specific-info {
-  padding-bottom: 1rem;
 }

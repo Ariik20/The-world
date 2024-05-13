@@ -30,7 +30,27 @@ const Country = () => {
     dataFetch();
   }, [id]);
 
-  //function to go back the main route
+  //get the borders of each country
+  let borderList = [];
+  console.log(border.data);
+  for (let key in border.data) {
+    let country = border.data[key];
+    let borderName = country?.name?.common;
+    let borderCode = country?.cca3.toLowerCase();
+    borderList.push({ borderName, borderCode });
+  }
+  console.log(borderList);
+  //get the native name of each country
+  let natives = country[0]?.name.nativeName
+    ? Object.keys(country[0]?.name.nativeName)[0]
+    : null;
+  let nativeName = country[0]?.name?.nativeName?.[natives]?.common;
+  //get the language spoken in each country
+  let spokenLanguages = [];
+  for (let properties in country[0]?.languages) {
+    spokenLanguages.push(country[0].languages[properties]);
+  }
+
   const goBack = (e) => {
     e.preventDefault();
     navigate("/");
@@ -51,6 +71,8 @@ const Country = () => {
               currencies,
               tld,
             } = c;
+
+            //get the currencies used in different countries
             let currency;
             let actualCurrency;
             for (let currencyName in currencies) {
@@ -68,14 +90,6 @@ const Country = () => {
                 }
               }
             }
-            let natives = country[0].name.nativeName
-              ? Object.keys(country[0].name.nativeName)[0]
-              : null;
-            let nativeName = country[0]?.name?.nativeName?.[natives]?.common;
-            let spokenLanguages = [];
-            for (let properties in country[0]?.languages) {
-              spokenLanguages.push(country[0].languages[properties]);
-            }
             return (
               <div key={index} className="single-page">
                 <button onClick={goBack} className="goBack">
@@ -83,33 +97,58 @@ const Country = () => {
                 </button>
                 <div className="singleCountry-info">
                   <div className="single-flag">
-                    <img src={flags.png} />
+                    <img src={flags.png} className="single-country-flag" />
                   </div>
 
                   <div className="single-info">
                     <h2>{name.common}</h2>
                     <div className="important-info">
-                      <p>Native Name: {nativeName}</p>
-                      <p>Capital: {capital}</p>
-                      <p>Population: {population}</p>
-                      <p>Region: {region}</p>
-                      <p>Sub-region: {subregion}</p>
+                      <p>
+                        <b>Native Name:</b> {nativeName}
+                      </p>
+                      <p>
+                        <b>Capital</b>: {capital}
+                      </p>
+                      <p>
+                        <b>Population</b>: {population}
+                      </p>
+                      <p>
+                        <b>Region</b>: {region}
+                      </p>
+                      <p>
+                        <b>Sub-region</b>: {subregion}
+                      </p>
                     </div>
                     <div className="specific-info">
-                      <p>Domain: {tld}</p>
-                      <p>Currencies: {actualCurrency}</p>
                       <p>
-                        language(s):{" "}
+                        <b>Domain</b>: {tld}
+                      </p>
+                      <p>
+                        <b>Currencies</b>: {actualCurrency}
+                      </p>
+                      <p>
+                        <b>language(s)</b>:{" "}
                         {spokenLanguages.map((l, i) => (
                           <span key={i}>
                             {i === spokenLanguages.length - 1
                               ? l + " "
-                              : l + " ,"}
+                              : l + ", "}
                           </span>
                         ))}
                       </p>
                     </div>
-                    <div className="border-countries">Border Countries:</div>
+                    <div className="border-countries">
+                      <b>Border Countries</b>:
+                      {borderList.length > 0
+                        ? borderList.map((b) => {
+                            return (
+                              <Link to={`/${b.borderCode}`}>
+                                <button>{b.borderName}</button>
+                              </Link>
+                            );
+                          })
+                        : " No Border Countries"}
+                    </div>
                   </div>
                 </div>
               </div>
