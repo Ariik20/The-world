@@ -91,7 +91,6 @@ input {
   border-style: none;
   width: 460px;
   border-radius: 0.25rem;
-  /* box-shadow: var(--box-shadow); */
 }
 .links {
   text-decoration: none;
@@ -131,7 +130,8 @@ p b {
   height: 200px;
 }
 .single-info {
-  padding-top: 1.7rem;
+  padding-left: 1rem;
+  margin-top: 2rem;
 }
 .single-info h2 {
   padding-bottom: 1rem;
@@ -179,7 +179,7 @@ p b {
 @media only screen and (min-width: 1200px) {
   .all-countries {
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    gap: 5rem;
   }
 }
 @media only screen and (min-width: 1500px) {
