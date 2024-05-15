@@ -10,13 +10,14 @@
   padding: 1rem 5%;
 }
 .nav-bar h2 {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: bolder;
 }
 .icon-text {
   display: flex;
   gap: 4px;
 }
+
 .all-countries {
   display: grid;
   width: 80vw;

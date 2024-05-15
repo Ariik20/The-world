@@ -7,7 +7,7 @@ const NavBar = () => {
       </div>
       <div className="icon-text">
         <FaMoon />
-        <p>coming soon...</p>
+        <span>coming soon...</span>
       </div>
     </div>
   );
