@@ -49,14 +49,13 @@
 .country-info h4 {
   font-size: 18px;
   line-height: 20px;
-  font-weight: 700;
   padding-bottom: 0.8rem;
 }
-.country-info p {
-  font-size: 14px;
+p {
+  font-size: 15px;
   line-height: 18px;
   font-weight: lighter;
-  padding-bottom: 0.8rem;
+  padding-bottom: 1rem;
 }
 .select-search {
   margin-top: 2rem;
@@ -97,10 +96,8 @@ input {
   text-decoration: none;
   color: black;
 }
-
-p b {
+b {
   font-weight: 600;
-  line-height: 18px;
 }
 .single-page {
   margin: 3rem auto;
