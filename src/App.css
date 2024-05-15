@@ -4,6 +4,7 @@
 .nav-bar {
   background-color: white;
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5%;
@@ -18,7 +19,7 @@
 }
 .all-countries {
   display: grid;
-  width: 50vw;
+  width: 80vw;
   margin: auto;
   padding-bottom: 5rem;
 }
@@ -89,7 +90,7 @@ input {
   font-size: 16px;
   outline: none;
   border-style: none;
-  width: 460px;
+  width: 80%;
   border-radius: 0.25rem;
 }
 .links {
@@ -101,7 +102,6 @@ p b {
   font-weight: 600;
   line-height: 18px;
 }
-/* for the single page */
 .single-page {
   margin: 3rem auto;
   width: 90vw;
@@ -123,11 +123,11 @@ p b {
   display: grid;
 }
 .single-flag {
-  text-align: center;
+  padding-left: 2.5rem;
 }
 .single-country-flag {
-  width: 400px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
 }
 .single-info {
   padding-left: 1rem;
@@ -145,6 +145,7 @@ p b {
 .specific-info {
   padding-bottom: 1rem;
 }
+
 .border-countries button {
   padding: 0.7rem 0.8rem;
   background-color: white;
@@ -173,7 +174,14 @@ p b {
   .singleCountry-info {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
+  }
+  .detail-flex {
+    display: flex;
+    gap: 4rem;
+  }
+  input {
+    width: 500px;
   }
 }
 @media only screen and (min-width: 1200px) {

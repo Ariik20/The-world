@@ -20,7 +20,6 @@ const Countries = ({ countries }) => {
   });
   return (
     <div className="countries-container">
-      <NavBar />
       {/* searching  and the input bars*/}
       <div className="searching">
         <div className="searchContainer">

@@ -5,6 +5,7 @@ import Countries from "./componenets/search";
 import Country from "./componenets/country";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavBar from "./componenets/navbar";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -23,8 +24,8 @@ function App() {
   }, []);
   return (
     <div>
+      <NavBar />
       <Router>
-        <div></div>
         <Routes>
           <Route path="/:id" element={<Country />} />
           <Route path="/" element={<Countries countries={countries} />} />

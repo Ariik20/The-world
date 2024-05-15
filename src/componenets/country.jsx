@@ -1,6 +1,5 @@
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import NavBar from "./navbar";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import axios from "axios";
 
@@ -32,14 +31,12 @@ const Country = () => {
 
   //get the borders of each country
   let borderList = [];
-  console.log(border.data);
   for (let key in border.data) {
     let country = border.data[key];
     let borderName = country?.name?.common;
     let borderCode = country?.cca3.toLowerCase();
     borderList.push({ borderName, borderCode });
   }
-  console.log(borderList);
   //get the native name of each country
   let natives = country[0]?.name.nativeName
     ? Object.keys(country[0]?.name.nativeName)[0]
@@ -57,7 +54,6 @@ const Country = () => {
   };
   return (
     <div>
-      <NavBar />
       {!country
         ? "Loading..."
         : country.map((c, index) => {
@@ -102,40 +98,42 @@ const Country = () => {
 
                   <div className="single-info">
                     <h2>{name.common}</h2>
-                    <div className="important-info">
-                      <p>
-                        <b>Native Name:</b> {nativeName}
-                      </p>
-                      <p>
-                        <b>Capital</b>: {capital}
-                      </p>
-                      <p>
-                        <b>Population</b>: {population}
-                      </p>
-                      <p>
-                        <b>Region</b>: {region}
-                      </p>
-                      <p>
-                        <b>Sub-region</b>: {subregion}
-                      </p>
-                    </div>
-                    <div className="specific-info">
-                      <p>
-                        <b>Domain</b>: {tld}
-                      </p>
-                      <p>
-                        <b>Currencies</b>: {actualCurrency}
-                      </p>
-                      <p>
-                        <b>language(s)</b>:{" "}
-                        {spokenLanguages.map((l, i) => (
-                          <span key={i}>
-                            {i === spokenLanguages.length - 1
-                              ? l + " "
-                              : l + ", "}
-                          </span>
-                        ))}
-                      </p>
+                    <div className="detail-flex">
+                      <div className="important-info">
+                        <p>
+                          <b>Native Name:</b> {nativeName}
+                        </p>
+                        <p>
+                          <b>Capital</b>: {capital}
+                        </p>
+                        <p>
+                          <b>Population</b>: {population}
+                        </p>
+                        <p>
+                          <b>Region</b>: {region}
+                        </p>
+                        <p>
+                          <b>Sub-region</b>: {subregion}
+                        </p>
+                      </div>
+                      <div className="specific-info">
+                        <p>
+                          <b>Domain</b>: {tld}
+                        </p>
+                        <p>
+                          <b>Currencies</b>: {actualCurrency}
+                        </p>
+                        <p>
+                          <b>language(s)</b>:{" "}
+                          {spokenLanguages.map((l, i) => (
+                            <span key={i}>
+                              {i === spokenLanguages.length - 1
+                                ? l + " "
+                                : l + ", "}
+                            </span>
+                          ))}
+                        </p>
+                      </div>
                     </div>
                     <div className="border-countries">
                       <b>Border Countries</b>:
