@@ -179,7 +179,7 @@ b {
     gap: 4rem;
   }
   input {
-    width: 500px;
+    width: 450px;
   }
 }
 @media only screen and (min-width: 1200px) {
